@@ -21,7 +21,7 @@ The existing exercise implementation is preserved; the repository name describes
 
 ## Run the existing exercise
 
-From the repository root, using Python 3.10 or newer:
+Using Python 3.10 or newer, start with a fresh checkout:
 
 ```bash
 git clone https://github.com/smgpulse007/neetcode-gpt.git
@@ -29,7 +29,8 @@ cd neetcode-gpt
 python -m examples.descent
 ```
 
-To run the single worked example directly:
+From an existing checkout, run the walkthrough with `python -m examples.descent`.
+To run the single worked example directly from the repository root:
 
 ```bash
 python -c "from foundations import Solution; print(Solution().get_minimizer(10, 0.1, 5))"
