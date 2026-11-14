@@ -1,57 +1,62 @@
-# My GPT — Built from Scratch
+# NeetCode ML Exercises — GPT Scaffold
 
-> Assembled from the NeetCode ML course on [NeetCode.io](https://neetcode.io)
-> Built by **smgpulse007** on May 12, 2026
+Learning repository associated with the [NeetCode ML course](https://neetcode.io/practice?tab=coreSkills&topic=Machine+Learning).
 
-Every file in this project is code I wrote and submitted while completing the NeetCode ML course.
-The problems progressively build from gradient descent fundamentals all the way to a working GPT.
+**Status: incomplete scaffold.** The checked-in implementation is a scalar gradient descent exercise. A GPT model, tokenizer, training loop, and text generation entry point are not present. This repository does not currently train or generate text.
 
-## Project Structure
+![Recorded terminal demo of the original gradient descent exercise converging from positive and negative starts](docs/gradient-descent-demo.gif)
 
-```
-model/          Attention, Transformer, GPT architecture
-  attention.py             Self-attention head
-  multi_head_attention.py  Multi-headed attention
-  transformer.py           Transformer block
-  gpt.py                   GPT model
-  normalization.py         Layer normalization
-  batch_normalization.py   Batch normalization
-  rms_normalization.py     RMS normalization
-  embeddings.py            Word embeddings
-  positional_encoding.py   Positional encoding
-  kv_cache.py              KV-Cache for fast inference
-  grouped_query_attention.py  Grouped query attention
+The animation shows actual output from the included exercise and its tests. [Recording details](docs/record-demo.md)
 
-data/           Data pipeline
-  tokenizer.py                BPE tokenizer
-  vocab.py                    Character-level vocabulary
-  loader.py                   Batched training data loader
-  dataset.py                  GPT dataset preparation
-  nlp_preprocessing.py        NLP preprocessing
-  tokenizer_utils.py          Tokenization edge cases
+## What is available
 
-train.py        GPT training loop
-generate.py     Text generation
+| Path | Current contents |
+| --- | --- |
+| `foundations/gradient_descent.py` | `Solution.get_minimizer`: gradient descent on `f(x) = x²`, returning the final value rounded to five decimal places |
+| `foundations/__init__.py` | Exports the implemented `Solution` class |
+| `model/` | Package placeholder for future model code |
+| `data/` | Package placeholder for future data code |
 
-foundations/    Neural network primitives built from scratch
-  neuron.py, backprop.py, mlp.py, activations.py, loss.py,
-  training_loop.py, dead_relu_detector.py, ...
-```
+The existing exercise implementation is preserved; the repository name describes the learning goal, not a completed GPT implementation.
 
-## Quick Start
+## Run the existing exercise
+
+From the repository root, using Python 3.10 or newer:
 
 ```bash
-pip install -r requirements.txt
-python train.py
-python generate.py
+git clone https://github.com/smgpulse007/neetcode-gpt.git
+cd neetcode-gpt
+python -m examples.descent
 ```
 
-## Course
+To run the single worked example directly:
 
-This project was built by completing the [NeetCode ML Course](https://neetcode.io/practice?tab=coreSkills&topic=Machine+Learning):
-- Math Foundations (gradient descent, activations, loss functions)
-- Neural Networks from scratch (neuron, backprop, MLP)
-- PyTorch fundamentals
-- NLP pipeline (embeddings, tokenization, attention)
-- Transformer architecture
-- GPT model + text generation
+```bash
+python -c "from foundations import Solution; print(Solution().get_minimizer(10, 0.1, 5))"
+```
+
+Expected output:
+
+```text
+0.53687
+```
+
+The update is `x_next = x - learning_rate * 2*x`. For this quadratic, a learning rate strictly between 0 and 1 converges toward zero. The exercise assumes a nonnegative iteration count; it does not validate inputs.
+
+No third-party dependencies are needed for this exercise or its tests. The historical `requirements.txt` lists packages intended for the broader ML project; installing them does not supply the missing implementation.
+
+## Verify
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Tests cover package imports, the worked example, convergence from either sign, and zero iterations. These checks validate only the included exercise.
+
+## Planned work
+
+- Recover and verify any original course submissions before adding them here, preserving attribution.
+- Add model and data components with tests as they become available.
+- Add training and generation commands only once they can be run from a clean checkout, with documented data, configuration, and measured results.
+
+No model-quality or training-performance results are claimed for the current scaffold.

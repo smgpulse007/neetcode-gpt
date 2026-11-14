@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-11-14T04:09:32.251117+00:00",
+  "kind": "animation_rendered_from_actual_command_output",
+  "source_sha256": {
+    "foundations/gradient_descent.py": "7876f564a9db92df6876de042d4e1baac5ade2c3841ffcaa64b4280339c4df8e",
+    "foundations/__init__.py": "1a93d99a91cf6313186ea69a41c70bb13fab70b93c36487e279c735e251e0ef3",
+    "examples/descent.py": "03b58ba60a44e0f0327b910fc330f1bfe0642f91ce2b2a0692dfdf4db7e7ace1",
+    "tests/test_foundations.py": "505b13098d841a91ac2afa01af784dcc6806f3419ecce20e8ae74a5b631198ea"
+  },
+  "commands": [
+    {
+      "command": "python -m examples.descent",
+      "exit_code": 0,
+      "output": "Scalar gradient descent: f(x) = x^2, learning rate = 0.1\nEach row calls the original exercise from its initial value.\n\niterations      start +5      start -5\n         0       5.00000      -5.00000\n         1       4.00000      -4.00000\n         5       1.63840      -1.63840\n        10       0.53687      -0.53687\n        25       0.01889      -0.01889\n        50       0.00007      -0.00007\n\nReturned values are rounded to five decimal places by the exercise.\nThis repository currently contains no GPT training or generation code.\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests",
+      "exit_code": 0,
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.010s\n\nOK\n"
+    }
+  ]
+}
