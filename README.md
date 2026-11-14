@@ -13,7 +13,7 @@ Learning repository associated with the [NeetCode ML course](https://neetcode.io
 | `model/` | Package placeholder for future model code |
 | `data/` | Package placeholder for future data code |
 
-The existing exercise is preserved as submitted; the repository name describes the learning goal, not a completed GPT implementation.
+The existing exercise implementation is preserved; the repository name describes the learning goal, not a completed GPT implementation.
 
 ## Run the existing exercise
 
