@@ -4,6 +4,10 @@ Learning repository associated with the [NeetCode ML course](https://neetcode.io
 
 **Status: incomplete scaffold.** The checked-in implementation is a scalar gradient descent exercise. A GPT model, tokenizer, training loop, and text generation entry point are not present. This repository does not currently train or generate text.
 
+![Recorded terminal demo of the original gradient descent exercise converging from positive and negative starts](docs/gradient-descent-demo.gif)
+
+The animation shows actual output from the included exercise and its tests. [Recording details](docs/record-demo.md)
+
 ## What is available
 
 | Path | Current contents |
@@ -18,6 +22,14 @@ The existing exercise implementation is preserved; the repository name describes
 ## Run the existing exercise
 
 From the repository root, using Python 3.10 or newer:
+
+```bash
+git clone https://github.com/smgpulse007/neetcode-gpt.git
+cd neetcode-gpt
+python -m examples.descent
+```
+
+To run the single worked example directly:
 
 ```bash
 python -c "from foundations import Solution; print(Solution().get_minimizer(10, 0.1, 5))"
